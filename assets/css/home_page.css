@@ -11,22 +11,21 @@ body {
 }
 
 header {
-    background-color: #ff7043;
-    color: white;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
     top: 0;
     z-index: 1000;
+    border-radius: 0 0 100px 100px;
 }
 
 header nav a {
-    margin-left: 20px;
-    color: white;
+    margin-right: 350px;
+    color: #ff7043;
     text-decoration: none;
     font-weight: bold;
+    font-size: 25px;
 }
 
 .hero {
@@ -75,6 +74,12 @@ header nav a {
     color: white;
     padding: 2rem;
     margin: 3rem 0;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin: 60px 0 50px 50px;
 }
 
 footer {
