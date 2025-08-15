@@ -6,59 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mariah Sabores - Salgados</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/home_page.css">
     <link rel="shortcut icon" href="assets/img/ico_mariasabores.ico" type="ico_mariasabores">
-
 </head>
 
 <body>
     <header>
-        <img src="assets/img/logo_mariasabores_sem fundo.png" alt="logo_mariasabores" class="logo">
-        <nav>
-            <a href="#cardapio">Cardápio</a>
-            <a href="#festas">Festas</a>
-            <a href="#contato">Contato</a>
-        </nav>
+        <img src="assets/img/banner-salgados.png" alt="logo_mariasabores" class="fundo">
+        <div id="banner">
+            <img src="assets/img/logo_mariasabores_sem fundo.png" alt="logo_mariasabores" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#cardapio"><i class="fa-solid fa-utensils"></i>Cardápio</a></li>
+                    <li><a href="#fale-conosco"><i class="fa-solid fa-champagne-glasses"></i></i>Encomenda</a></li>
+                    <li><a href="#sobre"><i class="fa-solid fa-champagne-glasses"></i></i>Sobre</a></li>
+                    <li><a href="#contato"><i class="fa-solid fa-comment-dots"></i>Contato</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Salgados quentinhos e irresistíveis! Peça agora</h1>
-    </section>
-
-    <section class="section" id="cardapio">
-        <h2>Mais Pedidos</h2>
+    <section id="cardapio">
+        <h2>Nossos salgados mais pedidos</h2>
         <div class="cardapio">
             <div class="salgado">
-                <img src="assets/img/coxinha.jpg" alt="Coxinha">
-                <p>Coxinha Cremosa</p>
+                <img src="assets/img/coxinha-de-frango.jpg" alt="Coxinha">
+                <p>Coxinha de Frango</p>
             </div>
             <div class="salgado">
-                <img src="assets/img/bolinhadequeijo.jpg" alt="Bolinha de Queijo">
+                <img src="assets/img/casulo.jpg" alt="Bolinha de Queijo">
                 <p>Bolinha de Queijo</p>
             </div>
             <div class="salgado">
-                <img src="assets/img/kibe.jpg" alt="Kibe">
+                <img src="assets/img/quibe.jpg" alt="Kibe">
                 <p>Kibe Recheado</p>
             </div>
             <div class="salgado">
-                <img src="assets/img/empada.jpg" alt="Empada">
+                <img src="assets/img/empada-de-palmito.jpg" alt="Empada de palmito">
                 <p>Empada de Palmito</p>
             </div>
+
         </div>
+        <p id="veja-mais"><a href="#cardapio">Veja mais no nosso cardápio</a></p>
     </section>
 
-    <section class="section cta">
-        <h2>Vai fazer uma festa?</h2>
-        <p>Temos combos prontos com salgados e doces! Fale conosco e monte seu pacote.</p>
-        <a href="https://wa.me/5511933542405" target="_blank"
-            style="display:inline-block;margin-top:1rem;background:white;color:#ff7043;padding:0.5rem 1rem;border-radius:5px;text-decoration:none;font-weight:bold;">Fale
-            pelo WhatsApp 📱 😋 </a>
+    <section id="sobre">
+        <h1>Mariah Sabores</h1>
+        <p>Na Mariah Sabores, a paixão por salgados caseiros se traduz em cada mordida. Com receitas de família e
+            ingredientes de alta qualidade, garantimos o sabor autêntico e aconchegante que só a comida feita com
+            carinho pode oferecer.</p>
+        <h1>Missão</h1>
+        <p>Nossa missão é levar o sabor autêntico e o aconchego dos salgados caseiros até a sua mesa. Com receitas de família e ingredientes selecionados, transformamos cada mordida em uma experiência deliciosa, cheia de carinho e tradição.</p>
+        <h1>Visão</h1>
+        <p>Nossa visão é ser reconhecida como a salgateria caseira de referência, sinônimo de sabor, qualidade e afeto. Buscamos ser a primeira escolha para quem deseja reviver o aconchego e a nostalgia dos salgados de família, expandindo nosso carinho e tradição para cada vez mais mesas e celebrações.</p>
+        <h1>Valores</h1>
+        <p>Na Mariah Sabores, nossos valores são a base de tudo que fazemos. Acreditamos no sabor autêntico e na tradição, mantendo viva a essência das receitas caseiras. Por isso, a qualidade é inegociável em cada etapa, desde a seleção dos ingredientes frescos até o toque final. O segredo está na paixão e dedicação que colocamos em cada preparo, transformando cada salgado em uma experiência única, feita com todo o carinho.</p>
+    </section>
+
+    <section id="fale-conosco">
+        <div id="banner-fale-conosco"></div>
+        <h2>Quer fazer uma encomenda?</h2>
+        <h2>Pretende fazer uma festa?</h2>
+        <p>Temos combos prontos com salgados e doces! Fale conosco e monte o seu pacote.</p>
+        <a href="https://wa.me/5511933542405" target="_blank"><i class="fa-brands fa-whatsapp"></i> Fale pelo WhatsApp
+            </i></a>
     </section>
 
     <footer id="contato">
-        <p>Mariah Sabores - Rua Padre Antonio Rosmini, 46 - Jardim Porteira Grande - São Paulo-SP</p>
-        <p>Atendimento: Seg a Sáb das 8h às 18h</p>
-        <p><a href="https://instagram.com" style="color: #ff7043; text-decoration: none;">@mariahsabores</a></p>
+        <p><b>Mariah Sabores</b> - Rua Padre Antonio Rosmini, nº 46 - Jardim Porteira Grande - São Paulo-SP</p>
+        <p>Atendimento: Segunda a Sábado das 8h às 18h</p>
+        <p><a href="https://instagram.com"><i class="fa-brands fa-instagram"></i> @mariahsabores </a></p>
+
     </footer>
 </body>
 
