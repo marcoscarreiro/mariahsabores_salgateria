@@ -1,0 +1,4 @@
+[[redirects]]
+from = "/*"
+to = "/NOME-DA-INDEX.html"
+status = 200
