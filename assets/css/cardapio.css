@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+:root {
+    --primary-color: #ff7043;
+    --secondary-color: #333;
+    --background-color: #fff8f0;
+    --white-color: #FFF;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+body {
+    background: #fff8f0;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+/* -----------------------------------------------HEADER------------------------------------------------------------ */
+header nav {
+    background-color: var(--primary-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    z-index: 10;
+}
+
+header nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+header nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 1s;
+    justify-content: space-between;
+}
+
+header nav a:hover {
+    transform: scale(1.3);
+    color: var(--secondary-color);
+}
+
+header #nav-logo {
+    transition: transform 1s;
+    text-align: center;
+}
+
+header .logo {
+    width: 10rem;
+}
+
+header #nav-logo:hover {
+    transform: scale(1.1);
+}
+
+header #navegacao-esquerda,
+header #navegacao-direita,
+header #nav-logo {
+    display: flex;
+    justify-content: center;
+    flex-basis: 33.33%;
+}
+
+/* -----------------------------------------------SECTION CARDÁPIO------------------------------------------------------------ */
+
+#pagina-cardapio {
+    text-align: center;
+    padding: 2rem;
+}
+
+#pagina-cardapio h1,
+#pagina-cardapio p{
+    padding: 0.5rem;
+}
+
+#pagina-cardapio #navbar-cardapio{
+    padding-top: 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#pagina-cardapio #navbar-cardapio ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none; 
+}
+
+#pagina-cardapio #navbar-cardapio ul li {
+    display: flex;
+    align-items: center;
+}
+
+#pagina-cardapio #navbar-cardapio a{
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+/* -----------------------------------------------BOTÃO RETORNAR AO TOPO------------------------------------------------------------ */
+#topo a {
+    background: var(--background-color);
+    color: var(--secondary-color);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-size: 3rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.6);
+}
+
+/* Efeito hover para "Voltar ao Topo" */
+#topo a:hover {
+    transform: scale(1.2);
+}
+
+/* -----------------------------------------------FOOTER------------------------------------------------------------ */
+
+footer {
+    background: var(--secondary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 2rem;
+    height: 10vh;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+footer a {
+    color: #ff7043;
+    text-decoration: none;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    line-height: 1;
+}

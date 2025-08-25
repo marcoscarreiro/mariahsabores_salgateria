@@ -26,64 +26,94 @@ body {
 
 /* -------------------------------------------------HEADER---------------------------------------------------------- */
 
-header .fundo {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    top: 0;
-    z-index: -1;
-}
-
-header #banner {
-    display: flex;
-    align-items: start;
-    height: 100vh;
-    width: 100%;
+header {
     position: relative;
-    box-sizing: border-box;
-    padding: 2rem;
+    height: 100vh;
+    width: 100%;
 }
 
-header #banner a {
-    color: var(--white-color);
-    text-decoration: none;
-    font-weight: bolder;
-    font-size: 2.5rem;
-    z-index: 1;
-    transition: .3s;
-    text-shadow: 0.1rem 0.2rem 0.5rem black;
-}
-
-header #banner a:hover {
-    color: var(--primary-color)
-}
-
-header #banner i {
-    margin-right: 1rem;
-    color: var(--white-color);
-}
-
-header #banner ul {
-    list-style: none;
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding-top: 3rem;
+    justify-content: center;
+    padding: 5rem 0;
+    z-index: 10;
 }
 
-header nav {
+nav ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    gap: 10rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 2rem;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 1s;
+}
+
+nav a:hover{
+    transform: scale(1.3);
+    color: var(--primary-color);
+}
+
+#banner {
+    height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/banner-salgados.png') center/cover no-repeat;
+    position: relative;
+}
+
+#banner::before {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/banner-salgados.png') center/cover no-repeat;
+    position: relative;
+}
+
+#banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+.logo-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
-    width: 10rem;
-    margin-left: 2rem;
+    width: 30rem;
+    transition: transform 1s;
 }
 
 .logo:hover {
-    scale: 1.1;
-    transition: 0.3s;
+    transform: scale(1.1);
 }
 
 /* -----------------------------------------------SECTION CARDÁPIO------------------------------------------------------------ */
@@ -129,7 +159,7 @@ header nav {
     padding: 1.5rem;
     border-radius: 1rem;
     box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.10);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 1s, box-shadow 0.2s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -176,6 +206,7 @@ header nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 8rem 2rem;
     text-align: center;
     height: 100vh;
@@ -195,6 +226,101 @@ header nav {
     margin: 0 auto 3rem auto;
 }
 
+#sobre .container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+#sobre .card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    /* cria profundidade para o efeito */
+    cursor: pointer;
+}
+
+#sobre .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+#sobre .card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+#sobre .card-front,
+#sobre .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#sobre #front-1 {
+    background-image: linear-gradient(to bottom, #ff704352, #a5a5a559), url('../img/pessoas-festa.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: transform 0.5s ease-in;
+}
+
+#sobre #front-1:hover {
+    background-image: linear-gradient(to bottom, #ffffff52, #00000059), url('../img/pessoas-festa.png');
+    transform: scale(1.05);
+}
+
+#sobre #front-2 {
+    background-image: linear-gradient(to bottom, #ff704352, #a5a5a559), url('../img/pessoas-festa-salgados.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: transform 0.5s ease-in;
+}
+
+#sobre #front-2:hover {
+    background-image: linear-gradient(to bottom, #ffffff52, #00000059), url('../img/pessoas-festa-salgados.png');
+    transform: scale(1.05);
+}
+
+#sobre #front-3 {
+    background-image: linear-gradient(to bottom, #ff704352, #a5a5a559), url('../img/varios-salgados.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: transform 0.5s ease-in;
+}
+
+#sobre #front-3:hover{
+    background-image: linear-gradient(to bottom, #ffffff52, #00000059), url('../img/varios-salgados.png');
+    transform: scale(1.05);
+}
+
+#sobre .card-back {
+    background-color: var(--secondary-color);
+    transform: rotateY(180deg);
+}
+
+#sobre .card-front h1,
+#sobre .card-back p {
+    color: var(--white-color);
+    padding: 0 2rem;
+    text-align: justify;
+}
+
+
+/* 
 #sobre .cards {
     display: flex;
     flex-direction: column;
@@ -237,11 +363,28 @@ header nav {
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    text-align: justify;
 }
 
-#sobre #p-sobre{
-    padding-bottom: 50px;
+#sobre details{
+    width: 30rem;
 }
+#sobre .cards summary{
+    background: var(--primary-color);
+    padding: 3rem;
+    margin-left: -10px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+#sobre .cards summary h1{
+    color: var(--secondary-color);
+    margin: 0 auto;
+} */
+
+/* #sobre #p-sobre {
+    padding-bottom: 50px;
+} */
 
 /* ------------------------------------------DIV FALE CONOSCO----------------------------------------------------------------- */
 
@@ -303,6 +446,7 @@ header nav {
 }
 
 /* -----------------------------------------------CONTATO------------------------------------------------------------ */
+
 #contato {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -313,8 +457,8 @@ header nav {
 
 #contato h3 {
     text-align: center;
-    margin: 0 30px;
-    padding: 15px;
+    margin: 0 3rem;
+    padding: 1.5rem;
 }
 
 #contato div {
@@ -324,7 +468,15 @@ header nav {
 }
 
 #contato #dados-contato {
-    padding: 0 100px;
+    padding: 0 10rem;
+}
+
+#contato iframe {
+    transition: 2s
+}
+
+#contato iframe:hover {
+    transform: scale(1.2);
 }
 
 #contato p {
@@ -338,6 +490,10 @@ header nav {
 
 #contato .p-contato {
     color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #contato a {
@@ -346,31 +502,51 @@ header nav {
 
 #contato #rede-social {
     flex-direction: row;
-    gap: 20px;
+    gap: 2rem;
 }
 
 #contato #rede-social i {
     color: var(--secondary-color);
     font-size: 3rem;
-    margin-top: 15px;
-    transition: transform 0.5s;
-    padding-top: 30px;
+    margin-top: 1.5rem;
+    transition: transform 1s;
+    padding-top: 3rem;
 }
 
 #contato #rede-social i:hover {
-transform: translateY(-0.3rem) scale(1.05);
-color: var(--primary-color);
+    transform: translateY(-0.3rem) scale(1.3);
+    color: var(--primary-color);
 }
 
+/* -----------------------------------------------BOTÃO RETORNAR AO TOPO------------------------------------------------------------ */
+#topo a {
+    background: var(--background-color);
+    color: var(--secondary-color);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    font-size: 3rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.6);
+}
 
+/* Efeito hover para "Voltar ao Topo" */
+#topo a:hover {
+    transform: scale(1.2);
+}
 /* -----------------------------------------------FOOTER------------------------------------------------------------ */
-
 
 footer {
     background: var(--secondary-color);
     color: var(--white-color);
     text-align: center;
-    padding: 2rem;
+    padding: 3rem;
     height: 10vh;
 }
 
