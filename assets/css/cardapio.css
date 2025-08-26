@@ -19,8 +19,8 @@ html {
 }
 
 body {
-    background: #fff8f0;
-    color: #333;
+    background: var(--background-color);
+    color: var(--secondary-color);
     font-size: 1.6rem;
 }
 
@@ -89,23 +89,42 @@ header #nav-logo {
 #pagina-cardapio {
     text-align: center;
     padding: 2rem;
+    width: 70%;
+    margin: 0 auto;
 }
 
 #pagina-cardapio h1,
-#pagina-cardapio p{
+#pagina-cardapio p,
+#pagina-cardapio h3 {
     padding: 0.5rem;
 }
 
-#pagina-cardapio #navbar-cardapio{
-    padding-top: 2rem;
+#pagina-cardapio h1 {
+    font-size: 3rem;
+    padding-top: 3rem;
+}
+
+#pagina-cardapio h3{
+    padding-top: 4rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+#pagina-cardapio p {
+    font-size: 2rem;
+}
+
+#pagina-cardapio #navbar-cardapio {
+    padding-top: 5rem;
     display: flex;
     width: 100%;
     justify-content: center;
 }
+
 #pagina-cardapio #navbar-cardapio ul {
     display: flex;
     gap: 3rem;
-    list-style: none; 
+    list-style: none;
 }
 
 #pagina-cardapio #navbar-cardapio ul li {
@@ -113,9 +132,39 @@ header #nav-logo {
     align-items: center;
 }
 
-#pagina-cardapio #navbar-cardapio a{
+#pagina-cardapio #navbar-cardapio a {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     font-size: 2rem;
+    color: var(--primary-color);
+    padding: 0 5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Cria a linha invisível abaixo do texto */
+#pagina-cardapio #navbar-cardapio a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -5px; /* Posição da linha */
+    left: 0;
+    background-color: var(--secondary-color);
+    transform: scaleX(0); /* A linha começa invisível */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* No hover, a linha se torna visível */
+#pagina-cardapio #navbar-cardapio a:hover {
+    color: var(--secondary-color);
+}
+
+#pagina-cardapio #navbar-cardapio a:hover::after {
+    transform: scaleX(1);
 }
 
 /* -----------------------------------------------BOTÃO RETORNAR AO TOPO------------------------------------------------------------ */
@@ -147,8 +196,8 @@ footer {
     background: var(--secondary-color);
     color: var(--white-color);
     text-align: center;
-    padding: 2rem;
-    height: 10vh;
+    padding: 3rem;
+    height: 8vh;
 }
 
 footer p {
