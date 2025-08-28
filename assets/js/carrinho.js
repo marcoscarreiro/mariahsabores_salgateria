@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Define a classe 'active' para o link clicado e remove dos outros
     const setActiveLink = (clickedLink) => {
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -83,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         clickedLink.classList.add('active');
     };
 
-    // Adiciona o evento de clique a cada link de navegação
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -93,14 +91,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Exibe a aba "Todos os Produtos" por padrão ao carregar a página
     const defaultLink = document.querySelector('a[href="#secao-todos"]');
     if (defaultLink) {
         defaultLink.click();
     }
-    // Código do cardapio.js termina aqui
 
-    //--CÓDIGO DO CARRINHO COMEÇA AQUI--
     const abrirCarrinhoBtn = document.getElementById('abrir-carrinho');
     const fecharCarrinhoBtn = document.getElementById('fechar-carrinho');
     const carrinhoModal = document.getElementById('carrinho-modal');
@@ -155,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const avisoCompra = document.getElementById('aviso-compra');
     avisoCompra.style.display = "none";
-
 
     adicionarBotoes.forEach(botao => {
         botao.addEventListener('click', (evento) => {
