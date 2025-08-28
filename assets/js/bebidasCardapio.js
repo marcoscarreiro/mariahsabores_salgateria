@@ -1,5 +1,4 @@
-let bebidasCardapio = [
-    // Refrigerantes 2 Litros
+let bebidasCardapio = JSON.parse(localStorage.getItem('bebidasCardapio')) || [
     {
         foto: 'coca-cola-2l.jpg',
         nome: 'Coca-Cola 2 Litros',
@@ -20,7 +19,7 @@ let bebidasCardapio = [
         nome: 'Sprite 2 Litros',
         valor: 9.50
     },
-    
+
     // Refrigerantes Lata
     {
         foto: 'coca-cola-lata.jpg',
@@ -64,8 +63,7 @@ let bebidasCardapio = [
         nome: 'Kuat Zero 2 Litros',
         valor: 9.00
     },
-    
-    // Refrigerantes Lata Zero/Diet
+
     {
         foto: 'coca-cola-zero-lata.jpg',
         nome: 'Coca-Cola Sem Açúcar Lata 350ml',
@@ -87,7 +85,6 @@ let bebidasCardapio = [
         valor: 5.00
     },
 
-    // Águas e Sucos
     {
         foto: 'h2o-limoneto.jpg',
         nome: 'H2O Limoneto 500ml',

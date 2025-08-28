@@ -18,15 +18,14 @@
             <div id="navegacao-esquerda">
                 <ul>
                     <li><a href="index.html"><i class="fa-solid fa-house"></i>Página Inicial</a></li>
-
                 </ul>
             </div>
-            <div id="nav-logo">
+            <div class="nav-logo">
                 <img src="assets/img/logo_mariah_sem_borda.png" alt="Logo da Mariah Sabores" class="logo">
             </div>
             <div id="navegacao-direita">
                 <ul>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i>Carrinho</a></li>
+                    <li><a href="#" id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i>Carrinho</a></li>
                     <li><a href="#"><i class="fa-solid fa-circle-user"></i>Login</a></li>
                 </ul>
             </div>
@@ -47,11 +46,452 @@
         </div>
         <nav id="navbar-cardapio">
             <ul>
-                <li><a href="#"><i class="fa-solid fa-pizza-slice"></i>Salgados</a></li>
-                <li><a href="#"><i class="ri-drinks-line"></i>Bebidas</a></li>
-                <li><a href="#"><i class="ri-drinks-line"></i>Vegano</a></li>
+                <li><a href="#secao-todos"><i class="fa-solid fa-store"></i>Todos os produtos</a></li>
+                <li><a href="#secao-salgados"><i class="fa-solid fa-pizza-slice"></i>Salgados</a></li>
+                <li><a href="#secao-bebidas"><i class="ri-drinks-line"></i>Bebidas</a></li>
+                <li><a href="#secao-veganos"><i class="ri-drinks-line"></i>Vegano</a></li>
             </ul>
         </nav>
+
+
+        <section id="secao-salgados" class="card-secao">
+            <div class="card-container">
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_coxinha.png" alt="Coxinha de Frango" class="card-imagem">
+                    <h3>Coxinha de Frango</h3>
+                    <p class="card-ingredientes">Ingredientes: Farinha de trigo, frango desfiado, catupiry, temperos
+                        especiais.</p>
+                    <p class="card-preco">R$ 6,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_risole_carne.png" alt="Risole de Carne"
+                        class="card-imagem">
+                    <h3>Risole de Carne</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de pastel, carne moída refogada, azeitonas, queijo
+                    </p>
+                    <p class="card-preco">R$ 6,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_quibe.png" alt="Quibe tradicional" class="card-imagem">
+                    <h3>Quibe tradicional</h3>
+                    <p class="card-ingredientes">Ingredientes: Carne moída magra, trigo para quibe, hortelã fresca</p>
+                    <p class="card-preco">R$ 5,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_bolinha_queijo.png" alt="Bolinha de Queijo"
+                        class="card-imagem">
+                    <h3>Bolinha de queijo</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de batata, queijo muçarela, orégano</p>
+                    <p class="card-preco">R$ 5,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_empada.png" alt="Empada de Palmito" class="card-imagem">
+                    <h3>Empada de Palmito</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de empada, creme de palmito, cheiro-verde</p>
+                    <p class="card-preco">R$ 7,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_esfirra.png" alt="Esfiha de Calabresa"
+                        class="card-imagem">
+                    <h3>Esfiha de Calabresa</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa fofinha, calabresa moída, queijo, cebola.</p>
+                    <p class="card-preco">R$ 7,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_enroladinho_salsicha.png" alt="Enroladinho de Salsicha"
+                        class="card-imagem">
+                    <h3>Enroladinho de Salsicha</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de pão, salsicha de alta qualidade, toque de molho.
+                    </p>
+                    <p class="card-preco">R$ 4,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_salgados/salgados_croquete.png" alt="Croquete de Carne"
+                        class="card-imagem">
+                    <h3>Croquete de Carne</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de batata, carne cozida e desfiada, especiarias.
+                    </p>
+                    <p class="card-preco">R$ 6,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="secao-bebidas" class="card-secao">
+            <div class="card-container">
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_coca2litrosnormal.png" alt="Coca-cola 2 litros"
+                        class="card-imagem">
+                    <h3>Coca-Cola 2 Litros</h3>
+                    <p class="card-preco">R$ 12,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_guarana2lnormal.jpeg" alt="Guaraná Antárctica 2 Litros"
+                        class="card-imagem">
+                    <h3>Guaraná Antárctica 2 Litros</h3>
+                    <p class="card-preco">R$ 11,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_fanta2lnormal.jpg" alt="Fanta laranja 2 Litros"
+                        class="card-imagem">
+                    <h3>Fanta laranja 2 Litros</h3>
+                    <p class="card-preco">R$ 10,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_sprite2lnormal.jpg" alt="Sprite 2 litros"
+                        class="card-imagem">
+                    <h3>Sprite 2 Litros</h3>
+                    <p class="card-preco">R$ 10,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_cocalatanormal.png" alt="Coca-Cola Lata 350ml"
+                        class="card-imagem">
+                    <h3>Coca-Cola Lata 350ml</h3>
+                    <p class="card-preco">R$ 6,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_guaranalatanormal.jpg" alt="Guaraná Antarctica Lata 350ml"
+                        class="card-imagem">
+                    <h3>Guaraná Antárctica Lata 350ml</h3>
+                    <p class="card-preco">R$ 5,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_fantalatanormal.jpg" alt="Fanta Laranja Lata 350ml"
+                        class="card-imagem">
+                    <h3>Fanta Laranja Lata 350ml</h3>
+                    <p class="card-preco">R$ 5,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_spritelatanormal.jpg" alt="Sprite Lata 350ml"
+                        class="card-imagem">
+                    <h3>Sprite Lata 350ml</h3>
+                    <p class="card-preco">R$ 5,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_coca2lzero.jpg" alt="Coca-Cola Sem Açúcar 2 Litros"
+                        class="card-imagem">
+                    <h3>Coca-Cola Sem Açúcar 2 Litros</h3>
+                    <p class="card-preco">R$ 12,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_guarana2lzero.jpg" alt="Guaraná Antarctica Zero 2 Litros"
+                        class="card-imagem">
+                    <h3>Guaraná Antarctica Zero 2 Litros</h3>
+                    <p class="card-preco">R$ 10,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_fanta2lzero.png" alt="Fanta Laranja Zero 2 Litros"
+                        class="card-imagem">
+                    <h3>Fanta Laranja Zero 2 Litros</h3>
+                    <p class="card-preco">R$ 9,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_guaranalatazero.jpg"
+                        alt="Guaraná Antarctica Zero Lata 350ml" class="card-imagem">
+                    <h3>Guaraná Antárctica Zero Lata 350ml</h3>
+                    <p class="card-preco">R$ 6,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_fantalatazero.jpg" alt="Fanta Laranja Zero Lata 350ml"
+                        class="card-imagem">
+                    <h3>Fanta Laranja Zero Lata 350ml</h3>
+                    <p class="card-preco">R$ 6,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_spritelatazero.png" alt="Sprite Zero Lata 350ml"
+                        class="card-imagem">
+                    <h3>Sprite Zero Lata 350ml</h3>
+                    <p class="card-preco">R$ 5,80</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_h2o500ml.jpg" alt="H2O Limoneto 500ml" class="card-imagem">
+                    <h3>H2O Limoneto 500ml</h3>
+                    <p class="card-preco">R$ 7,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_aguasemgas.png" alt="Água Mineral sem Gás 500ml"
+                        class="card-imagem">
+                    <h3>Água Mineral sem Gás 500ml</h3>
+                    <p class="card-preco">R$ 4,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_aguacomgas.jpg" alt="Água Mineral com Gás 500ml"
+                        class="card-imagem">
+                    <h3>Água Mineral com Gás 500ml</h3>
+                    <p class="card-preco">R$ 4,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_deluva.jpg" alt="Suco Del Valle Uva 1 Litro"
+                        class="card-imagem">
+                    <h3>Suco Del Valle Uva 1 Litro</h3>
+                    <p class="card-preco">R$ 10,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_delpessego.jpg" alt="Suco Del Valle Pêssego 1 Litro"
+                        class="card-imagem">
+                    <h3>Suco Del Valle Pêssego 1 Litro</h3>
+                    <p class="card-preco">R$ 10,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_bebidas/bebida_dellaranja.png" alt="Suco Del Valle Laranja 1 Litro"
+                        class="card-imagem">
+                    <h3>Suco Del Valle Laranja 1 Litro</h3>
+                    <p class="card-preco">R$ 10,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+        </section>
+
+        <section id="secao-veganos" class="card-secao">
+            <div class="card-container">
+                <div class="card-item">
+                    <img src="assets/img/img_vegano/vegano_coxinhavegana.png" alt="Coxinha de Jaca" class="card-imagem">
+                    <h3>Coxinha de Jaca</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de mandioca, jaca verde desfiada, tempero
+                        caseiro.</p>
+                    <p class="card-preco">R$ 7,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_vegano/vegano_esfirralentilha.png" alt="Esfiha de Lentilha"
+                        class="card-imagem">
+                    <h3>Esfiha de Lentilha</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa fofinha, lentilha refogada, tomate,
+                        pimentão, cenoura.</p>
+                    <p class="card-preco">R$ 6,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_vegano/vegano_quibepts.png" alt="Quibe Vegano de PTS" class="card-imagem">
+                    <h3>Quibe Vegano de PTS</h3>
+                    <p class="card-ingredientes">Ingredientes: Trigo para quibe, proteína de soja, hortelã,
+                        limão.</p>
+                    <p class="card-preco">R$ 6,00</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_vegano/vegano_salsichavegana.png" alt="Enroladinho de Salsicha Vegana"
+                        class="card-imagem">
+                    <h3>Enroladinho de Salsicha Vegana</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de pão, salsicha de proteína vegetal.</p>
+                    <p class="card-preco">R$ 5,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_vegano/vegano_empadapalmito.png" alt="Empada de Palmito Vegana"
+                        class="card-imagem">
+                    <h3>Empada de Palmito Vegana</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de empada sem ovo, recheio cremoso de
+                        palmito.</p>
+                    <p class="card-preco">R$ 7,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+                <div class="card-item">
+                    <img src="assets/img/img_vegano/vegano_bolinhadequeijo.png" alt="Bolinha de Queijo Vegano"
+                        class="card-imagem">
+                    <h3>Bolinha de "Queijo" Vegano</h3>
+                    <p class="card-ingredientes">Ingredientes: Massa de batata, queijo de castanha, orégano.</p>
+                    <p class="card-preco">R$ 6,50</p>
+                    <div class="card-quantidade">
+                        <button class="diminuir-btn">-</button>
+                        <span class="quantidade-num">1</span>
+                        <button class="aumentar-btn">+</button>
+                    </div>
+                    <button class="adicionar-carrinho">Adicionar</button> 
+                </div>
+            </div>
+        </section>
     </section>
 
     <div id="topo">
@@ -59,9 +499,31 @@
     </div>
 
     <footer>
-        <p><b>© 2025 Mariah Sabores. Todos os direitos reservados. | Desenvolvido por [Seu Nome/Nome da Empresa].</b>
+        <div class="logo-mdy">
+            <img src="assets/img/logo_MDY/logo_myd_sem_fundo.png" alt="Logo Mariah Sabores Footer" class="footer-logo">
+        </div>
+        <p><strong>© 2025 Mariah Sabores. Todos os direitos reservados. | Desenvolvido por {MDY}.</strong>
         </p>
     </footer>
+
+    <div id="carrinho-modal" class="carrinho-oculto">
+        <div class="carrinho-conteudo">
+            <span id="fechar-carrinho" class="fechar">&times;</span>
+            <h3>Seu Carrinho</h3>
+            <ul id="lista-carrinho">
+            </ul>
+            <div class="carrinho-total">
+                <p>Total: R$ <span id="total-carrinho">0.00</span></p>
+            </div>
+            <button id="finalizar-compra" class="btn-finalizar">Finalizar Compra</button>
+        </div>
+    </div>
+    <div id="aviso-compra"><p>Produto inserido com sucesso!</p>
+
+    </div>
+    <script src="assets/js/carrinho.js"></script>
+
+
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-let salgadosCardapio = [
+let salgadosCardapio = JSON.parse(localStorage.getItem('salgadosCardapio')) || [
     {
         foto: '../img/img_cardapio/',
         nome: 'Coxinha de Frango',
