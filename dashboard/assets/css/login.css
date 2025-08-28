@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-primaria: rgb(255, 112, 67);
+    --fundo: rgb(255, 255, 255);
+    --fonte: rgb(0, 0, 0);
+    --cards: rgb(255, 255, 255);
+    --fontep: rgb(134, 134, 134);
+    --linha: rgb(216, 216, 216);
+}
+
+.modo-escuro {
+    --cor-primaria: rgb(255, 112, 67);
+    --fundo: rgb(44, 44, 44);
+    --cards: rgb(55, 55, 55);
+    --fonte: rgb(255, 255, 255);
+    --fontep: rgb(196, 196, 196);
+    --linha: rgb(80, 80, 80);
+}
+
+/* ======================================================= */
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--cor-primaria);
+}
+
+/* ======================================================= */
+
+.card form {
+    width: 30%;
+}
+
+.card {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card .card-itens {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.card .card-itens h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card .card-itens button {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+
+    background-color: rgb(255, 112, 67);
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 5px 15px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px 40px;
+    margin-top: 20px;
+}
+
+.card .card-itens button:hover {
+    background-color: rgb(226, 97, 58);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.card .card-itens button a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/* ======================================================= */
+
+.form-control {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: var(--fundo);
+    border: 1px solid var(--linha);
+    color: var(--fontep);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+label {
+    width: 100%;
+    display: flex;
+    margin-bottom: 11px;
+    margin-top: 21px;
+    font-weight: 600;
+    color: var(--fontep);
+}

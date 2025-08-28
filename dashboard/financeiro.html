@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="navbar">
+            <h2>Painel Admin</h2>
+            <ul>
+                <li><a href="dashboard.html"><i class="fa-solid fa-user"></i>Dashboard</a></li>
+                <li><a href="cardapio.html"><i class="fa-solid fa-burger"></i>Cardápio</a></li>
+                <li><a href="pedidos.html"><i class="fa-solid fa-cart-shopping"></i>Pedidos</a></li>
+                <li class="navbar-ativo"><a href="financeiro.html"><i class="fa-solid fa-sack-dollar"></i>Financeiro</a></li>
+                <li><a href="configuracoes.html"><i class="fa-solid fa-user-gear"></i>Configurações</a></li>
+            </ul>
+            <div class="caixa-botao">
+                <button id="toggle-theme" class="btn-nav" onclick="alternarTema() ">Alternar tema</button>
+            </div>
+        </div>
+
+        <section class="conteudo">
+
+            <div class="card">
+                <div class="card-item">
+                    <h2>Financeiro</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-item">
+                    <p>Receita (mês)</p>
+                    <h2>R$ 45.258,69</h2>
+                </div>
+                <div class="card-item">
+                    <p>Despesas (mês)</p>
+                    <h2>R$ 12.529,59</h2>
+                </div>
+                <div class="card-item">
+                    <p>Lucro (mês)</p>
+                    <h2>R$ 19.529,69</h2>
+                </div>
+                <div class="card-item">
+                    <p>Pedidos (mês)</p>
+                    <h2>1.220</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-item">
+                    <p>Venda dos ultimos 7 dias</p>
+                    <canvas id="myChart3"></canvas>
+                </div>
+                <div class="card-item">
+                    <p>Produtos mais vendidos</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Descrição</th>
+                                <th>Tipo</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Venda balcão</td>
+                                <td>Receita</td>
+                                <td>R$ 36,90</td>
+                            </tr>
+                            <tr>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Venda balcão</td>
+                                <td>Receita</td>
+                                <td>R$ 36,90</td>
+                            </tr>
+                            <tr>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Venda balcão</td>
+                                <td>Receita</td>
+                                <td>R$ 36,90</td>
+                            </tr>
+                            <tr>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Venda balcão</td>
+                                <td>Receita</td>
+                                <td>R$ 36,90</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="assets/js/graficos.js"></script> -->
+     <script src="assets/js/grafico-financeiro.js"></script>
+    <script src="assets/js/tema-escuro.js"></script>
+</body>
+
+</html>

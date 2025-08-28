@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="navbar">
+            <h2>Painel Admin</h2>
+            <ul>
+                <li class="navbar-ativo"><a href="dashboard.html"><i class="fa-solid fa-user"></i>Dashboard</a></li>
+                <li><a href="cardapio.html"><i class="fa-solid fa-burger"></i>Cardápio</a></li>
+                <li><a href="pedidos.html"><i class="fa-solid fa-cart-shopping"></i>Pedidos</a></li>
+                <li><a href="financeiro.html"><i class="fa-solid fa-sack-dollar"></i>Financeiro</a></li>
+                <li><a href="configuracoes.html"><i class="fa-solid fa-user-gear"></i>Configurações</a></li>
+            </ul>
+            <div class="caixa-botao">
+                <button id="toggle-theme" class="btn-nav" onclick="alternarTema() ">Alternar tema</button>
+            </div>
+        </div>
+
+        <section class="conteudo">
+
+            <div class="card">
+                <div id="dashboard" class="card-item">
+                    <h2>Dashboard</h2>
+                    <!-- <span>
+                        <a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                        <a href=""><i class="fa-solid fa-circle-user"></i></a>
+                    </span> -->
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-item">
+                    <p>Vendas Hoje</p>
+                    <h2>R$ 1.258,69</h2>
+                </div>
+                <div class="card-item">
+                    <p>Ticket médio</p>
+                    <h2>R$ 29,59</h2>
+                </div>
+                <div class="card-item">
+                    <p>Pedidos</p>
+                    <h2>53</h2>
+                </div>
+                <div class="card-item">
+                    <p>Clientes</p>
+                    <h2>102</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-item">
+                    <p>Venda dos ultimos 7 dias</p>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="card-item">
+                    <p>Produtos mais vendidos</p>
+                    <canvas id="myChart2"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-item">
+                    <p>Pedidos recentes</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pedido #</th>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Cliente</th>
+                                <th>Itens</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td># 104</td>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Ygor Augusto</td>
+                                <td>Coxinha, Kibe, Bauru</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-entregue">Entregue</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td># 104</td>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Ygor Augusto</td>
+                                <td>Coxinha, Kibe, Bauru</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-preparando">Preparando</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td># 104</td>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Ygor Augusto</td>
+                                <td>Coxinha, Kibe, Bauru</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-pendente">Pendente</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td># 104</td>
+                                <td>26/08/2025</td>
+                                <td>8:57</td>
+                                <td>Ygor Augusto</td>
+                                <td>Coxinha, Kibe, Bauru</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-cancelado">Cancelado</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="pedidos.html">Ver mais</a>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/graficos.js"></script>
+    <script src="assets/js/tema-escuro.js"></script>
+</body>
+
+</html>

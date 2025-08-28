@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="navbar">
+            <h2>Painel Admin</h2>
+            <ul>
+                <li><a href="dashboard.html"><i class="fa-solid fa-user"></i>Dashboard</a></li>
+                <li><a href="cardapio.html"><i class="fa-solid fa-burger"></i>Cardápio</a></li>
+                <li><a href="pedidos.html"><i class="fa-solid fa-cart-shopping"></i>Pedidos</a></li>
+                <li><a href="financeiro.html"><i class="fa-solid fa-sack-dollar"></i>Financeiro</a></li>
+                <li class="navbar-ativo"><a href="configuracoes.html"><i
+                            class="fa-solid fa-user-gear"></i>Configurações</a></li>
+            </ul>
+            <div class="caixa-botao">
+                <button id="toggle-theme" class="btn-nav" onclick="alternarTema() ">Alternar tema</button>
+            </div>
+        </div>
+
+        <section class="conteudo">
+
+            <div class="card">
+                <div class="card-item">
+                    <h2>Configurações</h2>
+                </div>
+            </div>
+
+            <section class="form-container">
+                <h2 class="form-title">Dados da loja</h2>
+                <form>
+                    <section class="form-row">
+                        <section class="form-group">
+                            <label for="nome">Nome da loja</label>
+                            <input type="text" id="nome" class="form-control" placeholder="Ex: Mariah Sabores">
+                        </section>
+
+                        <section class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" class="form-control">
+                                <option value="available">Fechado</option>
+                                <option value="unavailable">Aberto</option>
+                            </select>
+                        </section>
+
+                    </section>
+
+                    <section class="form-row">
+                        <section class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" id="telefone" class="form-control" placeholder="Ex: (11) 11111-1111">
+                        </section>
+
+                        <section class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control"
+                                placeholder="Ex: mariahsabores@gmail.com">
+                        </section>
+                    </section>
+
+                    <section class="form-row">
+                        <section class="form-group">
+                            <label for="cnpj">CNPJ</label>
+                            <input type="text" id="cnpj" class="form-control" placeholder="Ex: 00.000.000/0000-00">
+                        </section>
+
+                        <section class="form-group">
+                            <label for="email">Endereço</label>
+                            <input type="email" id="email" class="form-control"
+                                placeholder="Ex: Rua Padre Antonio Rosmini, nº 46 - Jardim Porteira Grande - São Paulo-SP">
+                            </select>
+                        </section>
+                    </section>
+
+                    <section class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea id="description" class="form-control"
+                            placeholder="Deliciosos salgados fresquinhos feitos com carinho, perfeitos para qualquer hora do dia."></textarea>
+                    </section>
+
+                    <button type="submit" class="btn-principal">Salvar</button>
+                    <button type="reset" class="btn-principal">Resetar</button>
+                </form>
+            </section>
+
+            <!-- <div>
+                    <p>Produtos mais vendidos</p>
+                </div> -->
+
+            </div>
+
+            <!-- <div class="card">
+                <div>
+                    <p>Pedidos recentes</p>
+                </div>
+            </div> -->
+        </section>
+
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/graficos.js"></script>
+    <script src="assets/js/tema-escuro.js"></script>
+</body>
+
+</html>

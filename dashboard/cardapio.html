@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="container">
+        <div class="navbar">
+            <h2>Painel Admin</h2>
+            <ul>
+                <li><a href="dashboard.html"><i class="fa-solid fa-user"></i>Dashboard</a></li>
+                <li class="navbar-ativo"><a href="cardapio.html"><i class="fa-solid fa-burger"></i>Cardápio</a></li>
+                <li><a href="pedidos.html"><i class="fa-solid fa-cart-shopping"></i>Pedidos</a></li>
+                <li><a href="financeiro.html"><i class="fa-solid fa-sack-dollar"></i>Financeiro</a></li>
+                <li><a href="configuracoes.html"><i class="fa-solid fa-user-gear"></i>Configurações</a></li>
+            </ul>
+            <div class="caixa-botao">
+                <button id="toggle-theme" class="btn-nav" onclick="alternarTema() ">Alternar tema</button>
+            </div>
+        </div>
+
+        <section class="conteudo">
+
+            <div class="card">
+                <div class="card-item">
+                    <h2>Gerenciamento do cardapio</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-item">
+                    <p>Itens no cardápio</p>
+                    <h2>22</h2>
+                </div>
+                <div class="card-item">
+                    <p>Itens disponíveis</p>
+                    <h2>15</h2>
+                </div>
+                <div class="card-item">
+                    <p>Categorias</p>
+                    <h2>8</h2>
+                </div>
+                <div class="card-item">
+                    <p>Itens indisponíveis</p>
+                    <h2>7</h2>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-item">
+                    <p>Pedidos recentes</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Categoria</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Coxinha de Frango</td>
+                                <td>Frito</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-vermelho">Desabilitado</span>
+                                </td>
+                                <td>
+                                    <button class="btn-principal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-principal"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Coxinha de Frango</td>
+                                <td>Frito</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-verde">Habilitado</span>
+                                </td>
+                                <td>
+                                    <button class="btn-principal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-principal"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Coxinha de Frango</td>
+                                <td>Frito</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-verde">Habilitado</span>
+                                </td>
+                                <td>
+                                    <button class="btn-principal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-principal"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Coxinha de Frango</td>
+                                <td>Frito</td>
+                                <td>R$ 36,90</td>
+                                <td>
+                                    <span class="sts-vermelho">Desabilitado</span>
+                                </td>
+                                <td>
+                                    <button class="btn-principal"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn-principal"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="cardapio.html">Ver mais</a>
+                </div>
+            </div>
+
+
+            <section class="form-container">
+                <h2 class="form-title">Adicionar novo item</h2>
+                <form>
+                    <section class="form-row">
+                        <section class="form-group">
+                            <label for="name">Nome do item</label>
+                            <input type="text" id="name" class="form-control" placeholder="Ex: Coxinha de Frango">
+                        </section>
+                        <section class="form-group">
+                            <label for="category">Categoria</label>
+                            <select id="category" class="form-control">
+                                <option value="">Selecione uma categoria</option>
+                                <option value="fritos">Fritos</option>
+                                <option value="assados">Assados</option>
+                                <option value="doces">Doces</option>
+                                <option value="bebidas">Bebidas</option>
+                            </select>
+                        </section>
+                    </section>
+
+                    <section class="form-row">
+                        <section class="form-group">
+                            <label for="price">Preço (R$)</label>
+                            <input type="number" id="price" class="form-control" placeholder="Ex: 5.50" step="0.01"
+                                min="0">
+                        </section>
+                        <section class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" class="form-control">
+                                <option value="available">Habilitado</option>
+                                <option value="unavailable">Desabilitado</option>
+                            </select>
+                        </section>
+                    </section>
+
+                    <section class="form-group">
+                        <label for="description">Descrição</label>
+                        <textarea id="description" class="form-control" placeholder="Descreva o item..."></textarea>
+                    </section>
+
+                    <section class="form-group">
+                        <label for="image">Imagem do item</label>
+                        <input type="file" id="image" class="form-control">
+                    </section>
+
+                    <button type="submit" class="btn-principal">Adicionar Item</button>
+                </form>
+            </section>
+
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="assets/js/graficos.js"></script>
+        <script src="assets/js/tema-escuro.js"></script>
+</body>
+
+</html>
