@@ -1,3 +1,4 @@
+/* Estilos globais e variáveis */
 * {
     margin: 0;
     padding: 0;
@@ -13,35 +14,49 @@
     --secondary-color: #333;
     --background-color: #fff8f0;
     --white-color: #FFF;
+    --black-color: #000;
+}
+
+/* Tema Escuro */
+.dark-mode {
+    --primary-color: #ff8c64;
+    --secondary-color: #f5f5f5;
+    --background-color: #1a1a1a;
+    --white-color: #333;
+    --black-color: #fff;
 }
 
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
-    /* 1rem = 10px */
 }
 
 body {
     background: var(--background-color);
     color: var(--secondary-color);
     font-size: 1.6rem;
+    transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* -----------------------------------------------HEADER------------------------------------------------------------ */
 header nav {
     background-color: var(--primary-color);
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
 }
 
 header nav ul {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 3rem;
+    padding-top: 1rem;
 }
 
 header nav ul li {
-    display: flex;    
+    display: flex;
     align-items: center;
 }
 
@@ -90,20 +105,10 @@ header .logo {
     padding-top: 1rem;
 }
 
-header #navegacao-esquerda,
-header #navegacao-direita,
-header .nav-logo {
-    display: flex;
-    justify-content: center;
-    flex-basis: 33.33%;
-}
-
-/* -----------------------------------------------SECTION CARDÁPIO------------------------------------------------------------ */
-
 #pagina-cardapio {
     text-align: center;
     padding: 2rem;
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -137,7 +142,10 @@ header .nav-logo {
 
 #pagina-cardapio #navbar-cardapio ul {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 3rem;
+    width: 100%;
 }
 
 #pagina-cardapio #navbar-cardapio ul li {
@@ -152,7 +160,7 @@ header .nav-logo {
     align-items: center;
     font-size: 2rem;
     color: var(--primary-color);
-    padding: 0 5rem;
+    padding: 0 1rem;
     position: relative;
     transition: color 0.3s ease;
 }
@@ -177,10 +185,7 @@ header .nav-logo {
     transform: scaleX(1);
 }
 
-/* --------------------------------------------------------------------------------------------------------------------------------- */
-/* -------------------------------------------------CARDS DO CARDÁPIO--------------------------------------------------------------- */
 #pagina-cardapio .card-secao {
-    /* Centraliza o título e o contêiner de cards */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,19 +197,21 @@ header .nav-logo {
     color: var(--secondary-color);
     text-align: center;
     margin: 4rem 0 2rem 0;
-    /* Espaçamento entre as seções */
     text-transform: uppercase;
 }
 
 #pagina-cardapio .card-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     gap: 3rem;
     justify-content: center;
+    width: 100%;
 }
 
 #pagina-cardapio .card-item {
-    width: 28rem;
+    width: 90%;
+    max-width: 28rem;
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
@@ -238,7 +245,6 @@ header .nav-logo {
     font-size: 1.8rem;
 }
 
-/* Estilização para os botões de quantidade */
 .card-quantidade {
     display: flex;
     align-items: center;
@@ -261,7 +267,6 @@ header .nav-logo {
 
 .card-quantidade button:hover {
     background-color: #e65100;
-    /* Um tom um pouco mais escuro da cor primária */
     transform: scale(1.1);
 }
 
@@ -271,8 +276,7 @@ header .nav-logo {
     color: var(--secondary-color);
 }
 
-/* -----------------------------------------------CARRINHO------------------------------------------------------------ */
-#carrinho-modal{
+#carrinho-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -289,7 +293,7 @@ header .nav-logo {
     display: none !important;
 }
 
-.carrinho-conteudo{
+.carrinho-conteudo {
     background: var(--white-color);
     padding: 2rem;
     border-radius: 1rem;
@@ -299,14 +303,14 @@ header .nav-logo {
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
 }
 
-.carrinho-conteudo h3{
+.carrinho-conteudo h3 {
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
     color: var(--secondary-color);
 }
 
-#fechar-carrinho{
+#fechar-carrinho {
     position: absolute;
     top: 1rem;
     right: 2rem;
@@ -316,14 +320,14 @@ header .nav-logo {
     color: var(--secondary-color);
 }
 
-#lista-carrinho{
+#lista-carrinho {
     padding: 0;
     margin: 0;
     max-height: 40rem;
     overflow-y: auto;
 }
 
-.carrinho-item{
+.carrinho-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -355,7 +359,6 @@ header .nav-logo {
 .carrinho-item-botoes button {
     background-color: var(--primary-color);
     color: var(--white-color);
-    border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 0.5rem;
@@ -372,50 +375,34 @@ header .nav-logo {
 }
 
 .adicionar-carrinho {
-    /* Cor do botão e texto */
     background-color: var(--primary-color);
     color: var(--white-color);
-    
-    /* Espaçamento e forma */
     padding: 1.2rem 2.4rem;
     border-radius: 0.5rem;
-    
-    /* Fontes e alinhamento */
     font-size: 1.6rem;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    
-    /* Espaçamento em relação aos outros elementos */
     margin-top: 2rem;
-    
-    /* Transições e efeitos */
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .adicionar-carrinho:hover {
-    /* Escurece a cor principal ao passar o mouse */
     background-color: #e65100;
     transform: scale(1.05);
 }
+
 .btn-finalizar {
-    /* Cor do botão e texto */
     background-color: var(--primary-color);
     color: var(--white-color);
-    
-    /* Espaçamento e forma */
     padding: 1.5rem;
     border-radius: 0.5rem;
     width: 100%;
-    
-    /* Fontes e alinhamento */
     font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     cursor: pointer;
-    
-    /* Transições e efeitos */
     transition: background-color 0.3s ease;
     margin-top: 2rem;
 }
@@ -423,7 +410,7 @@ header .nav-logo {
 .btn-finalizar:hover {
     background-color: #e65100;
 }
-/* -----------------------------------------------BOTÃO RETORNAR AO TOPO------------------------------------------------------------ */
+
 #topo a {
     background: var(--background-color);
     color: var(--secondary-color);
@@ -445,8 +432,6 @@ header .nav-logo {
     transform: scale(1.2);
 }
 
-/* -----------------------------------------------AVISO COMPRA------------------------------------------------------------ */
-
 #aviso-compra {
     background: var(--primary-color);
     color: var(--white-color);
@@ -459,6 +444,7 @@ header .nav-logo {
     bottom: 20rem;
     right: 3rem;
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -466,22 +452,22 @@ header .nav-logo {
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.6);
 }
 
-/* -----------------------------------------------FOOTER------------------------------------------------------------ */
-
 footer {
     background: var(--secondary-color);
     color: var(--white-color);
     text-align: center;
-    height: 13vh;
+    height: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    padding: 2rem 0;
 }
 
 footer .logo-mdy {
-    padding: 2rem 5rem 2rem 0;
+    padding: 2rem 0;
 }
 
 footer .footer-logo {
@@ -492,3 +478,70 @@ footer p {
     margin-bottom: 0;
     font-size: 1.4rem;
 }
+
+@media (min-width: 768px) {
+    header nav {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        gap: 5rem;
+        padding-top: 0;
+    }
+
+    #pagina-cardapio {
+        width: 80%;
+    }
+
+    #pagina-cardapio #navbar-cardapio ul {
+        flex-direction: row;
+    }
+
+    #pagina-cardapio .card-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    #pagina-cardapio .card-item {
+        width: 45%;
+    }
+
+    footer {
+        height: 13vh;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    footer .logo-mdy {
+        padding: 0;
+        margin-right: 5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    header nav ul {
+        gap: 10rem;
+    }
+
+    header nav a {
+        font-size: 2.2rem;
+    }
+
+    #pagina-cardapio {
+        width: 70%;
+    }
+
+    #pagina-cardapio .card-container {
+        flex-wrap: nowrap;
+    }
+
+    #pagina-cardapio .card-item {
+        width: 28rem;
+    }
+}
+

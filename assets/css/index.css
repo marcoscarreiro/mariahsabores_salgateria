@@ -13,6 +13,8 @@
     --secondary-color: #333;
     --background-color: #fff8f0;
     --white-color: #FFF;
+    --black-color: #000;
+    --whatsapp-color: #25D366;
 }
 
 html {
@@ -22,10 +24,9 @@ html {
 }
 
 body {
-    background: #fff8f0;
-    color: #333;
+    background: var(--background-color);
+    color: var(--secondary-color);
     font-size: 1.6rem;
-    /* Solução Flexbox para o footer */
     display: flex;
     flex-direction: column;
 }
@@ -51,7 +52,9 @@ header nav {
 
 header nav ul {
     display: flex;
-    gap: 10rem;
+    flex-direction: column; /* MOBILE: Empilha os links */
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 header nav a {
@@ -113,7 +116,7 @@ header #banner::after {
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: #000;
+    background-color: var(--black-color);
     opacity: 0.4;
     z-index: 1;
 }
@@ -150,10 +153,10 @@ header .visually-hidden {
 /* -----------------------------------------------SECTION CARDÁPIO------------------------------------------------------------ */
 
 #section-cardapio {
-    padding: 5rem 0; /* Define o espaçamento vertical */
+    padding: 5rem 2rem;
     text-align: center;
     background-color: var(--primary-color);
-    height: 100vh;
+    height: auto;
     min-height: auto;
     display: flex;
     flex-direction: column;
@@ -171,11 +174,11 @@ header .visually-hidden {
 
 .cardapio {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* MOBILE: Empilha os cards */
     justify-content: center;
+    align-items: center;
     gap: 2rem;
     margin-top: 2rem;
-    align-items: stretch;
 }
 
 #p-cardapio a {
@@ -219,8 +222,8 @@ header .visually-hidden {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 25rem;
-    flex: 1 1 22rem;
+    max-width: 90%;
+    flex: 1 1 25rem;
     justify-content: space-between;
 }
 
@@ -247,13 +250,13 @@ header .visually-hidden {
 
 #sobre {
     margin-top: 5rem;
-    padding: 5rem 0; /* Adicione um padding interno para a seção "Sobre" */
+    padding: 5rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100vh;
+    height: auto;
     min-height: auto;
 }
 
@@ -274,13 +277,15 @@ header .visually-hidden {
 
 #sobre .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* MOBILE: Empilha os cards */
+    align-items: center;
     gap: 2rem;
 }
 
 #sobre .card {
-    width: 300px;
-    height: 400px;
+    width: 90%;
+    height: auto;
+    max-width: 40rem;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -307,7 +312,7 @@ header .visually-hidden {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--white-color);
 }
 
 #sobre #front-1 {
@@ -416,7 +421,7 @@ header .visually-hidden {
 }
 
 #div-conosco i {
-    color: #25D366;
+    color: var(--whatsapp-color);
     margin-right: 1rem;
     font-size: 2rem;
 }
@@ -424,11 +429,12 @@ header .visually-hidden {
 /* -----------------------------------------------CONTATO------------------------------------------------------------ */
 
 #contato {
+    padding: 5rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 81.7vh;
+    height: auto;
     background: var(--white-color);
 }
 
@@ -445,7 +451,7 @@ header .visually-hidden {
 }
 
 #contato #dados-contato {
-    padding: 0 10rem;
+    padding: 0 5%;
 }
 
 #contato p {
@@ -486,7 +492,8 @@ header .visually-hidden {
 #contato iframe {
     width: 90%;
     max-width: 600px;
-    height: 450px;
+    height: 300px;
+    margin-top: 2rem;
 }
 
 /* -----------------------------------------------BOTÃO RETORNAR AO TOPO------------------------------------------------------------ */
@@ -516,16 +523,13 @@ footer {
     background: var(--secondary-color);
     color: var(--white-color);
     text-align: center;
-    height: 13vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-}
-
-footer .logo-mdy {
-    padding: 2rem 5rem 2rem 0;
+    padding: 2rem 0; /* Adiciona padding para o footer */
 }
 
 footer .footer-logo {
@@ -538,68 +542,23 @@ footer p {
 }
 
 /* -----------------------------------------------RESPONSIVIDADE------------------------------------------------------------ */
-
-
-body {
-    font-size: 1.6rem;
-}
-
-header nav ul {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
-#sobre .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-#sobre .card {
-    width: 90%;
-    height: 300px;
-}
-
-#sobre .card-front h1 {
-    font-size: 2.5rem;
-}
-
-#sobre .card-back p {
-    font-size: 1.4rem;
-}
-
-#contato {
-    padding: 5rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    background: var(--white-color);
-}
-
-#contato #dados-contato {
-    padding: 0 5%;
-    text-align: center;
-}
-
-#contato #rede-social {
-    padding: 2rem 0;
-}
-
-#contato iframe {
-    width: 90%;
-    height: 300px;
-    margin-top: 2rem;
-}
-
-
+/* Tablet */
 @media (min-width: 768px) {
     header nav ul {
         flex-direction: row;
         gap: 5rem;
         padding: 5rem 0;
+    }
+
+    .cardapio {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .salgado {
+        max-width: 45%;
     }
 
     #sobre .container {
@@ -614,8 +573,8 @@ header nav ul {
     }
 
     #contato {
-        height: 87vh;
         padding: 3rem 0;
+        height: 87vh;
     }
 
     #contato #dados-contato {
@@ -624,10 +583,14 @@ header nav ul {
     }
 }
 
-
+/* Desktop */
 @media (min-width: 1024px) {
     header nav ul {
         gap: 10rem;
+    }
+
+    .salgado {
+        max-width: 25rem;
     }
 
     #sobre .container {
