@@ -26,7 +26,7 @@
             <div id="navegacao-direita">
                 <ul>
                     <li><a href="#" id="abrir-carrinho"><i class="fa-solid fa-cart-shopping"></i>Carrinho</a></li>
-                    <li><a href="#"><i class="fa-solid fa-circle-user"></i>Login</a></li>
+                    <li><a href="dashboard/login.html"><i class="fa-solid fa-circle-user"></i>Login</a></li>
                 </ul>
             </div>
         </nav>
@@ -515,11 +515,27 @@
             <div class="carrinho-total">
                 <p>Total: R$ <span id="total-carrinho">0.00</span></p>
             </div>
+            <div class="carrinho-dados-cliente">
+                <input type="text" id="nome-cliente" placeholder="Seu Nome" required>
+                <input type="text" id="endereco-cliente" placeholder="Seu Endereço" required>
+            </div>
+
             <button id="finalizar-compra" class="btn-finalizar">Finalizar Compra</button>
+            <button id="limpar-carrinho" class="btn-finalizar">Limpar Carrinho</button>
         </div>
     </div>
     <div id="aviso-compra">
-        <p>Produto inserido com sucesso!</p>
+        <p>Produto adicionado com sucesso!</p>
+
+        <div id="success-modal" class="carrinho-oculto">
+            <div class="success-conteudo">
+                <span id="fechar-sucesso" class="fechar">&times;</span>
+                <h3>Pedido Enviado!</h3>
+                <p>Seu pedido foi enviado com sucesso para o WhatsApp!</p>
+                <p>Em breve entraremos em contato para confirmar os detalhes.</p>
+                <a href="#" id="whatsapp-link" class="btn-whatsapp">Abrir no WhatsApp</a>
+            </div>
+        </div>
 
     </div>
     <script src="assets/light-dark.js"></script>

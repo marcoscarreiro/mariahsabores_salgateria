@@ -52,7 +52,8 @@ header nav {
 
 header nav ul {
     display: flex;
-    flex-direction: column; /* MOBILE: Empilha os links */
+    flex-direction: row;
+    /* Alinhamento padrão para desktop */
     gap: 2rem;
     padding: 2rem 0;
 }
@@ -174,9 +175,11 @@ header .visually-hidden {
 
 .cardapio {
     display: flex;
-    flex-direction: column; /* MOBILE: Empilha os cards */
+    flex-direction: row;
+    /* Alinhamento padrão para desktop */
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -277,8 +280,11 @@ header .visually-hidden {
 
 #sobre .container {
     display: flex;
-    flex-direction: column; /* MOBILE: Empilha os cards */
+    flex-direction: row;
+    /* Alinhamento padrão para desktop */
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
@@ -320,7 +326,7 @@ header .visually-hidden {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: 1;
     transition: transform 0.5s ease-in;
 }
 
@@ -334,7 +340,7 @@ header .visually-hidden {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: 1;
     transition: transform 0.5s ease-in;
 }
 
@@ -348,7 +354,7 @@ header .visually-hidden {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: 1;
     transition: transform 0.5s ease-in;
 }
 
@@ -529,7 +535,8 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 2rem 0; /* Adiciona padding para o footer */
+    padding: 2rem 0;
+    /* Adiciona padding para o footer */
 }
 
 footer .footer-logo {
@@ -541,13 +548,22 @@ footer p {
     font-size: 1.4rem;
 }
 
-/* -----------------------------------------------RESPONSIVIDADE------------------------------------------------------------ */
-/* Tablet */
+/* =========================
+   MEDIA QUERIES
+   ========================= */
+
+/* Desktop & Tablet: >= 768px */
 @media (min-width: 768px) {
     header nav ul {
         flex-direction: row;
         gap: 5rem;
         padding: 5rem 0;
+    }
+
+    /* Oculta o menu hambúrguer no desktop */
+    .nav-toggle,
+    .nav-toggle-label {
+        display: none;
     }
 
     .cardapio {
@@ -568,7 +584,7 @@ footer p {
     }
 
     #sobre .card {
-        width: 45%;
+        width: 300px;
         height: 350px;
     }
 
@@ -583,7 +599,7 @@ footer p {
     }
 }
 
-/* Desktop */
+/* Desktop: >= 1024px */
 @media (min-width: 1024px) {
     header nav ul {
         gap: 10rem;
@@ -618,5 +634,107 @@ footer p {
     #contato #dados-contato {
         padding: 0 10rem;
         text-align: left;
+    }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 768px) {
+    /* Estilos do cabeçalho em mobile */
+    header nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 2rem;
+        z-index: 10;
+        background: transparent;
+    }
+
+    /* Oculta o checkbox */
+    .nav-toggle {
+        display: none;
+    }
+
+    /* Estilo do botão de menu hambúrguer */
+    .nav-toggle-label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 3rem;
+        height: 2.2rem;
+        cursor: pointer;
+        z-index: 100;
+        position: relative;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        width: 100%;
+        height: 0.3rem;
+        background: var(--white-color);
+        border-radius: 0.2rem;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .nav-toggle-label span::before {
+        content: '';
+        position: absolute;
+        top: -0.8rem;
+    }
+
+    .nav-toggle-label span::after {
+        content: '';
+        position: absolute;
+        top: 0.8rem;
+    }
+
+    /* Animação para o 'X' */
+    .nav-toggle:checked+.nav-toggle-label span {
+        background: transparent;
+    }
+
+    .nav-toggle:checked+.nav-toggle-label span::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .nav-toggle:checked+.nav-toggle-label span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
+    /* Estilo da lista de navegação no mobile */
+    header nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        padding-top: 10rem;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 50;
+        align-items: center;
+        transition: right 0.5s ease-in-out;
+    }
+
+    .nav-toggle:checked~ul {
+        right: 0;
+    }
+
+    header nav a {
+        font-size: 2.4rem;
+        padding: 1.5rem 0;
+        display: block;
+    }
+
+    /* Ocultar Cards na seção "Sobre" */
+   #sobre .card {
+        width: 300px;
+        height: 350px;
     }
 }

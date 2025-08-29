@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('#navbar-cardapio a');
     const cardSections = document.querySelectorAll('.card-secao');
 
-
     const quantidadeContainers = document.querySelectorAll('.card-quantidade');
 
     quantidadeContainers.forEach(container => {
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const quantidadeSpan = container.querySelector('.quantidade-num');
 
         diminuirBtn.addEventListener('click', () => {
-            let quantidade = parseInt(quantidadeSpan.textContent);
+            let quantidade = parseInt(quantidadeSpan.textContent, 10);
             if (quantidade > 1) {
                 quantidade--;
                 quantidadeSpan.textContent = quantidade;
@@ -20,12 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         aumentarBtn.addEventListener('click', () => {
-            let quantidade = parseInt(quantidadeSpan.textContent);
+            let quantidade = parseInt(quantidadeSpan.textContent, 10);
             quantidade++;
             quantidadeSpan.textContent = quantidade;
         });
     });
-
 
     const addTitles = () => {
         const titles = {
@@ -44,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-
     const removeTitles = () => {
         cardSections.forEach(secao => {
             const h2 = secao.querySelector('h2');
@@ -53,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     };
-
 
     const showProducts = (category) => {
         cardSections.forEach(secao => {
@@ -104,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const totalCarrinhoSpan = document.getElementById('total-carrinho');
 
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    renderizarCarrinho();
+
     function atualizarTotal() {
         let total = 0;
         carrinho.forEach(item => {
@@ -132,36 +128,47 @@ document.addEventListener('DOMContentLoaded', () => {
             listaCarrinho.appendChild(li);
         });
         atualizarTotal();
-
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
     }
+
+    renderizarCarrinho();
 
     function adicionarAoCarrinho(produto, quantidadeAdicionar) {
         const itemExistente = carrinho.find(item => item.nome === produto.nome);
         if (itemExistente) {
-            // Se o item já existe, adicione a quantidade selecionada.
             itemExistente.quantidade += quantidadeAdicionar;
         } else {
-            // Se o item não existe, adicione com a quantidade selecionada.
             carrinho.push({ ...produto, quantidade: quantidadeAdicionar });
         }
         renderizarCarrinho();
     }
 
     const avisoCompra = document.getElementById('aviso-compra');
-    avisoCompra.style.display = "none";
+    if (avisoCompra) {
+        avisoCompra.style.display = 'none';
+    }
+
+    // Função reutilizável para mostrar a popup de aviso
+    function mostrarAviso(mensagem) {
+        if (!avisoCompra) return;
+        const p = avisoCompra.querySelector('p');
+        if (p) p.textContent = mensagem;
+        avisoCompra.style.display = 'flex';
+        setTimeout(() => {
+            avisoCompra.style.display = 'none';
+            if (p) p.textContent = 'Produto inserido com sucesso!';
+        }, 2000);
+    }
 
     adicionarBotoes.forEach(botao => {
         botao.addEventListener('click', (evento) => {
             const cardItem = evento.target.closest('.card-item');
+            if (!cardItem) return;
             const nomeProduto = cardItem.querySelector('h3').textContent;
             const precoProdutoTexto = cardItem.querySelector('.card-preco').textContent;
             const precoProduto = parseFloat(precoProdutoTexto.replace('R$ ', '').replace(',', '.'));
-            const quantidadeSelecionada = parseInt(cardItem.querySelector('.quantidade-num').textContent);
-            avisoCompra.style.display = "block";
-            setTimeout(() => {                
-                avisoCompra.style.display = "none";
-            }, 2000);
+            const quantidadeSelecionada = parseInt(cardItem.querySelector('.quantidade-num').textContent, 10);
+            mostrarAviso('Produto inserido com sucesso!');
             const produto = {
                 nome: nomeProduto,
                 preco: precoProduto
@@ -169,10 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
             adicionarAoCarrinho(produto, quantidadeSelecionada);
         });
     });
-
-
-
-
 
     listaCarrinho.addEventListener('click', (evento) => {
         const nomeProduto = evento.target.dataset.nome;
@@ -198,14 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (abrirCarrinhoBtn) {
         abrirCarrinhoBtn.addEventListener('click', (event) => {
             event.preventDefault();
-            carrinhoModal.classList.remove('carrinho-oculto');
+            if (carrinhoModal) carrinhoModal.classList.remove('carrinho-oculto');
         });
     }
 
     // Event listener para fechar o modal
     if (fecharCarrinhoBtn) {
         fecharCarrinhoBtn.addEventListener('click', () => {
-            carrinhoModal.classList.add('carrinho-oculto');
+            if (carrinhoModal) carrinhoModal.classList.add('carrinho-oculto');
         });
     }
 
@@ -216,18 +219,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // FINALIZAR COMPRA → ABRIR WHATSAPP
     const finalizarCompraBtn = document.getElementById('finalizar-compra');
-    if (finalizarCompraBtn) {
-        finalizarCompraBtn.addEventListener('click', () => {
+if (finalizarCompraBtn) {
+    finalizarCompraBtn.addEventListener('click', () => {
+        if (carrinho.length > 0) {
+            const nomeCliente = document.getElementById('nome-cliente').value.trim();
+            const enderecoCliente = document.getElementById('endereco-cliente').value.trim();
+
+            if (!nomeCliente || !enderecoCliente) {
+                mostrarAviso("Por favor, preencha nome e endereço para finalizar!");
+                return;
+            }
+
+            let mensagem = "📦 *Novo pedido - Mariah Sabores* %0A%0A";
+            
+            carrinho.forEach(item => {
+                mensagem += `🍴 ${item.nome} - Quantidade: ${item.quantidade} - Preço un.: R$ ${item.preco.toFixed(2)}%0A`;
+            });
+
+            mensagem += `%0A💰 *Total: R$ ${totalCarrinhoSpan.textContent}* %0A%0A`;
+            mensagem += `👤 Cliente: ${nomeCliente}%0A`;
+            mensagem += `📍 Endereço: ${enderecoCliente}%0A%0A`;
+            mensagem += "👉 Por favor, confirme meu pedido.";
+
+            const numeroWhatsApp = "5511999631909"; // altere para o número do seu negócio
+            const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+
+            window.open(url, '_blank');
+
+            // Limpa carrinho após abrir o WhatsApp
+            carrinho = [];
+            renderizarCarrinho();
+            if (carrinhoModal) carrinhoModal.classList.add('carrinho-oculto');
+
+            // Limpa inputs
+            document.getElementById('nome-cliente').value = '';
+            document.getElementById('endereco-cliente').value = '';
+        } else {
+            mostrarAviso('Seu carrinho está vazio!');
+        }
+    });
+}
+
+    // Handler opcional para botão "Limpar Carrinho" caso exista no HTML
+    const limparCarrinhoBtn = document.getElementById('limpar-carrinho');
+    if (limparCarrinhoBtn) {
+        limparCarrinhoBtn.addEventListener('click', () => {
             if (carrinho.length > 0) {
-                alert('Compra finalizada! Total: R$ ' + totalCarrinhoSpan.textContent);
                 carrinho = [];
                 renderizarCarrinho();
-                carrinhoModal.classList.add('carrinho-oculto');
+                mostrarAviso('Carrinho limpo com sucesso!');
             } else {
-                alert('Seu carrinho está vazio!');
+                mostrarAviso('Seu carrinho já está vazio!');
             }
         });
     }
-});
 
+}); // fecha DOMContentLoaded
